@@ -83,7 +83,7 @@ def create_model_mobnet():
 	backbone_layers = {'backbone_' + layer.name: layer for layer in backbone.layers}
 	for layer in model.layers:
 		if layer.name in backbone_layers:
-			print 'setting ' + layer.name
+			print ('setting ' + layer.name)
 			layer.set_weights(backbone_layers[layer.name].get_weights())
 
 	return model
